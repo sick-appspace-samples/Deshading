@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <manifest>
     <application name="Deshading">
         <crown name="Deshading">
@@ -7,20 +7,10 @@
         </crown>
         <meta key="author">AppSpace Sample</meta>
         <meta key="version">2.5.0</meta>
-        <meta key="licensed">false</meta>
         <meta key="priority">low</meta>
         <meta key="tags">InspectorP,SIM4000,Image,Algorithm,Filter,Analysis</meta>
         <meta key="read-protected">false</meta>
         <meta key="copy-protected">false</meta>
-        <entry path="pages" default="Viewer.msdd">
-            <file type="application/zip">Viewer.msdd</file>
-        </entry>
-        <entry path="resources">
-            <file type="image">CornFlakes.bmp</file>
-            <file type="image">WhiteSheet.bmp</file>
-        </entry>
-        <entry path="scripts" default="Deshading.lua">
-            <file type="text/x-lua">Deshading.lua</file>
-        </entry>
+        <entry default="Deshading.lua" path="scripts"/>
     </application>
 </manifest>
