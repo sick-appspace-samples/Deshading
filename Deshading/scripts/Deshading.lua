@@ -6,13 +6,11 @@ print('AppEngine Version: ' .. Engine.getVersion())
 local DELAY = 2000 -- ms between visualization steps for demonstration purpose
 
 -- Creating viewer
-local viewer = View.create("viewer2D1")
+local viewer = View.create()
 
 -- Seting up graphical overlay attributes
 
-local textDecoration = View.TextDecoration.create()
-textDecoration:setSize(40)
-textDecoration:setPosition(20, 40)
+local textDecoration = View.TextDecoration.create():setSize(40):setPosition(20, 40)
 
 --End of Global Scope-----------------------------------------------------------
 
@@ -37,8 +35,8 @@ local function main()
   -- Testing deshading on reference image
   local imgDeshaded = imgF:multiply(imgScaleNorm)
   viewer:clear()
-  local imageID = viewer:addImage(imgDeshaded)
-  viewer:addText('Deshaded', textDecoration, nil, imageID)
+  viewer:addImage(imgDeshaded)
+  viewer:addText('Deshaded', textDecoration)
   viewer:present()
   Script.sleep(DELAY) -- for demonstration purpose only
 
@@ -51,8 +49,8 @@ local function main()
 
   local liveImgDeshaded = Image.multiply(liveImg:toType('FLOAT32'), imgScaleNorm)
   viewer:clear()
-  imageID = viewer:addImage(liveImgDeshaded)
-  viewer:addText('Deshaded', textDecoration, nil, imageID)
+  viewer:addImage(liveImgDeshaded)
+  viewer:addText('Deshaded', textDecoration)
   viewer:present()
 
   print('App finished.')
